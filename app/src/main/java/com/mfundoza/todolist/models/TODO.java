@@ -24,6 +24,14 @@ public class TODO {
         this.time = time;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getTask() {
         return task;
     }
@@ -38,6 +46,14 @@ public class TODO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
 
     public LocalDate getDate() {
