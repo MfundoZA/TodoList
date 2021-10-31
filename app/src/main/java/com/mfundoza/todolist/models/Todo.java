@@ -1,21 +1,37 @@
 package com.mfundoza.todolist.models;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class TODO {
+@Entity
+public class Todo {
+    @PrimaryKey
     private int id;
+
+    @ColumnInfo
     private String task;
+
+    @ColumnInfo
     private String description;
+
+    @ColumnInfo
     private Priority priority;
+
+    @ColumnInfo
     private LocalDate date;
+
+    @ColumnInfo
     private LocalTime time;
 
-    public TODO(String task) {
+    public Todo(String task) {
         this.task = task;
     }
 
-    public TODO(int id, String task, String description, Priority priority, LocalDate date, LocalTime time) {
+    public Todo(int id, String task, String description, Priority priority, LocalDate date, LocalTime time) {
         this.id = id;
         this.task = task;
         this.description = description;
