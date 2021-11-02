@@ -1,4 +1,4 @@
-package com.mfundoza.todolist.database;
+/*package com.mfundoza.todolist.database;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -19,3 +19,4 @@ public interface TodoDao {
     @Query("DELETE FROM todo WHERE id IN (:todos)")
     void delete(List<Todo> todos);
 }
+*/
