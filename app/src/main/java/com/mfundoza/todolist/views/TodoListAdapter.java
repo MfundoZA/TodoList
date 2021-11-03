@@ -9,14 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mfundoza.todolist.R;
-import com.mfundoza.todolist.models.Priority;
 import com.mfundoza.todolist.models.Todo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHolder> {
-    private ArrayList<Todo> todos = new ArrayList<Todo>(Arrays.asList(new Todo("Get up!"), new Todo("Finish Assignment"), new Todo("Sleep")));
+    private ArrayList<Todo> todos;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView txtTaskName;
@@ -26,7 +24,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
         public ViewHolder(View view) {
             super(view);
 
-            // Event handlers can be declared here
+            // Event handlers can be declared here, but it's better to do so in a ViewModel
 
             txtTaskName = view.findViewById(R.id.txtTaskName);
             txtTaskTime = view.findViewById(R.id.txtTaskTime);
@@ -44,14 +42,6 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
         public TextView getTxtTaskPriority() {
             return txtTaskPriority;
         }
-    }
-
-    public TodoListAdapter() {
-        todos.get(1).setPriority(Priority.Normal);
-    }
-
-    public TodoListAdapter(ArrayList<Todo> todos) {
-        this.todos = todos;
     }
 
     @Override
