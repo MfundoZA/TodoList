@@ -28,7 +28,7 @@ android {
     }
 
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 
@@ -48,14 +48,13 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
 
-    /* def room_version = "2.3.0"
+     def room_version = "2.3.0"
 
     implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version" */
+    annotationProcessor "androidx.room:room-compiler:$room_version"
 
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
-
 
     // Add the dependency for the Firebase SDK for Google Analytics
     implementation 'com.google.firebase:firebase-analytics'
