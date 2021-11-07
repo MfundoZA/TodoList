@@ -1,17 +1,22 @@
 package com.mfundoza.todolist.views;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mfundoza.todolist.R;
+import com.mfundoza.todolist.databinding.FragmentMainBinding;
+import com.mfundoza.todolist.viewmodels.MainViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +24,8 @@ import com.mfundoza.todolist.R;
  * create an instance of this fragment.
  */
 public class MainFragment extends Fragment {
+    MainViewModel mainViewModel;
+    FragmentMainBinding binding;
 
     public MainFragment() {
         // Required empty public constructor
@@ -45,13 +52,23 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
+
+        Log.d("MainFragment", "View created! binding = " + binding.toString());
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
+
+        binding.setViewmodel(mainViewModel);
+        binding.setLifecycleOwner(this);
+
         RecyclerView rcyTodoList = getView().findViewById(R.id.rcyTodoList);
         rcyTodoList.setLayoutManager(new LinearLayoutManager(getContext()));
 
