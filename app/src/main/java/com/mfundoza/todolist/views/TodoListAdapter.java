@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mfundoza.todolist.R;
@@ -25,13 +26,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
         public ViewHolder(View view) {
             super(view);
 
-            // Event handlers can be declared here, but it's better to do so in a ViewModel
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
+            // Event handlers can be declared here or under onBindViewHolder(), but it's better to do so in a ViewModel
 
             txtTaskName = view.findViewById(R.id.txtTaskName);
             txtTaskTime = view.findViewById(R.id.txtTaskTime);
@@ -61,9 +56,20 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.getTxtTask().setText(todos.get(position).getTask());
-        holder.getTxtTaskTime().setText(todos.get(position).getTime().toString());
-        holder.getTxtTaskPriority().setText(todos.get(position).getPriority().toString());
+        holder.getTxtTask().setText(todos.get(holder.getAdapterPosition()).getTask());
+        holder.getTxtTaskTime().setText(todos.get(holder.getAdapterPosition()).getTime().toString());
+        holder.getTxtTaskPriority().setText(todos.get(holder.getAdapterPosition()).getPriority().toString());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int selectedTodo = holder.getAdapterPosition();
+                MainFragmentDirections.ActionMainFragmentToDetailFragment action
+                        = MainFragmentDirections.actionMainFragmentToDetailFragment(holder.getAdapterPosition());
+
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
     }
 
     @Override
