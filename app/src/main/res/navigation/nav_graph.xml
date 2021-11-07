@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/createTodoFragment"
-        android:name="com.mfundoza.todolist.CreateTodoFragment"
+        android:name="com.mfundoza.todolist.views.CreateTodoFragment"
         android:label="fragment_create_todo"
         tools:layout="@layout/fragment_create_todo" />
 </navigation>
