@@ -26,6 +26,12 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
             super(view);
 
             // Event handlers can be declared here, but it's better to do so in a ViewModel
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
 
             txtTaskName = view.findViewById(R.id.txtTaskName);
             txtTaskTime = view.findViewById(R.id.txtTaskTime);
