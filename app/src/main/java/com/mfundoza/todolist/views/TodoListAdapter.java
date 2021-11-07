@@ -10,11 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.mfundoza.todolist.R;
 import com.mfundoza.todolist.models.Todo;
+import com.mfundoza.todolist.viewmodels.MainViewModel;
 
 import java.util.ArrayList;
 
 public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHolder> {
-    private ArrayList<Todo> todos;
+    private ArrayList<Todo> todos = MainViewModel.getTodos();
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView txtTaskName;
