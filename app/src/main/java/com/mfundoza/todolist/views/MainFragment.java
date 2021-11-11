@@ -66,7 +66,7 @@ public class MainFragment extends Fragment {
 
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
 
-        binding.setViewmodel(mainViewModel);
+        binding.setViewModel(mainViewModel);
         binding.setLifecycleOwner(this);
 
         RecyclerView rcyTodoList = getView().findViewById(R.id.rcyTodoList);
