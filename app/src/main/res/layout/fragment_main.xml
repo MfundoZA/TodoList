@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="viewmodel"
+            name="viewModel"
             type="com.mfundoza.todolist.viewmodels.MainViewModel" />
     </data>
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:src="@drawable/ic_create_task"
-            android:onClick="@{viewmodel::btnCreateTodoOnClick}"
+            android:onClick="@{viewModel::btnCreateTodoOnClick}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="SpeakableTextPresentCheck"
