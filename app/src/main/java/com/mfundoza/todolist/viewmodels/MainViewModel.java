@@ -1,11 +1,12 @@
 package com.mfundoza.todolist.viewmodels;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.lifecycle.ViewModel;
+import androidx.navigation.Navigation;
 
 import com.mfundoza.todolist.models.Todo;
+import com.mfundoza.todolist.views.MainFragmentDirections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +23,6 @@ public class MainViewModel extends ViewModel {
     }
 
     public void btnCreateTodoOnClick(View view) {
-        //Snackbar.make(view.getContext(), view.findViewById(R.id.constraintLayout), "Button clicked!", Snackbar.LENGTH_SHORT).show();
-        Log.d("MainViewModel", "Button Clicked!");
+        Navigation.findNavController(view).navigate(MainFragmentDirections.actionMainFragmentToCreateTodoFragment());
     }
 }
