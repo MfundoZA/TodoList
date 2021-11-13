@@ -24,7 +24,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnCreateTodo"
+                android:id="@+id/fabCreateTodo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -41,9 +41,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
+            app:backgroundTint="#121212"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" >
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -52,49 +53,54 @@
 
                 <ImageButton
                     android:id="@+id/imbPreviousWeek"
-                    android:layout_margin="8dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/double_arrow_left"
-                    android:scaleType="centerInside"
+                    android:layout_margin="8dp"
                     android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/double_arrow_left"
+                    app:tint="@color/white" />
 
                 <ImageButton
                     android:id="@+id/imbPreviousDay"
-                    android:layout_margin="8dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/single_arrow_left"
-                    android:scaleType="centerInside"
+                    android:layout_margin="8dp"
                     android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/single_arrow_left"
+                    app:tint="@color/white" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="Date Selected" />
+                    android:text="Date Selected"
+                    android:textColor="@color/white" />
 
                 <ImageButton
                     android:id="@+id/imbNextDay"
-                    android:layout_margin="8dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/single_arrow_right"
-                    android:scaleType="centerInside"
+                    android:layout_margin="8dp"
                     android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/single_arrow_right"
+                    app:tint="@color/white" />
 
                 <ImageButton
                     android:id="@+id/imbNextWeek"
-                    android:layout_margin="8dp"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/double_arrow_right"
-                    android:scaleType="centerInside"
+                    android:layout_margin="8dp"
                     android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"/>
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/double_arrow_right"
+                    app:tint="@color/white" />
 
             </LinearLayout>
 
