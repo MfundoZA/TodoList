@@ -26,9 +26,6 @@
         android:name="com.mfundoza.todolist.views.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/action_detailFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
         <argument
             android:name="todoNumber"
             app:argType="integer" />
