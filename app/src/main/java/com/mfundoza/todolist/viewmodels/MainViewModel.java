@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MainViewModel extends ViewModel {
-    private static MutableLiveData<LocalDate> currentDate = new MutableLiveData<>();
+    private static MutableLiveData<LocalDate> currentDate = new MutableLiveData<>(LocalDate.now());
     private static ArrayList<Todo> todos = new ArrayList<>(Arrays.asList(new Todo("Get up!"), new Todo("Finish Assignment"), new Todo("Sleep")));
 
     public static ArrayList<Todo> getTodos() {
@@ -27,5 +27,29 @@ public class MainViewModel extends ViewModel {
 
     public void btnCreateTodoOnClick(View view) {
         Navigation.findNavController(view).navigate(MainFragmentDirections.actionMainFragmentToCreateTodoFragment());
+    }
+
+    public void imbPreviousWeek(View view) {
+        Calendar cal = Calendar.getInstance();
+
+        currentDate = cal.get(Calendar.Day) - 7;
+    }
+
+    public void imbPreviousDay(View view) {
+        Calendar cal = Calendar.getInstance();
+
+        currentDate = cal.get(Calendar.Day) - 1;
+    }
+
+    public void imbNextDay(View view) {
+        Calendar cal = Calendar.getInstance();
+
+        currentDate = cal.get(Calendar.Day) + 1;
+    }
+
+    public void imbNextWeek(View view) {
+        Calendar cal = Calendar.getInstance();
+
+        currentDate = cal.get(Calendar.Day) + 7;
     }
 }
